@@ -17,10 +17,12 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
-    private final String name;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    private final String name;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_detail_id")
     private StudentDetail studentDetail;
